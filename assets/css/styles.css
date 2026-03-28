@@ -439,29 +439,35 @@ strong {
 .hero__buttons {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   align-items: center;
-  margin-bottom: var(--spacing-lg);
+  width: 100%;
 }
 
+/* Phone button matches .button size exactly — just orange */
 .hero__phone {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 8px;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 0.95rem;
   color: var(--white);
+  background: var(--primary);
+  padding: 14px 32px;
+  border-radius: var(--border-radius);
   transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  white-space: nowrap;
 }
 
 .hero__phone:hover {
-  color: var(--primary);
-  transform: scale(1.05);
-}
-
-.hero__phone i {
-  font-size: 1.25rem;
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
 }
 
 .hero__dots {
@@ -667,6 +673,7 @@ strong {
   color: var(--white);
   font-size: 2rem;
   margin-bottom: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
 }
 
 .cta-banner p {
@@ -678,8 +685,9 @@ strong {
 .cta-banner__buttons {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   align-items: center;
+  justify-content: center;
 }
 
 /* ============================================
@@ -689,13 +697,14 @@ strong {
   background: var(--bg-dark);
   color: var(--text-light);
   border-top: 4px solid var(--primary);
+  padding-top: var(--spacing-xl);
 }
 
 .footer__inner {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-xl);
-  padding: var(--spacing-2xl) var(--spacing-sm);
+  padding: 0 var(--spacing-sm) var(--spacing-2xl) var(--spacing-sm);
 }
 
 .footer__logo {
@@ -1354,6 +1363,12 @@ strong {
 
   .hero__buttons {
     flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-sm);
+    width: auto;
+    margin-bottom: var(--spacing-lg);
   }
 
   /* Services Grid */
@@ -1438,6 +1453,42 @@ strong {
   .gallery__grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* ============================================
+   MOBILE MENU ENHANCEMENTS
+   ============================================ */
+/* Mobile menu close button */
+.nav__mobile-close {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  padding: 8px;
+  line-height: 1;
+  transition: var(--transition);
+}
+
+.nav__mobile-close:hover {
+  color: var(--primary);
+}
+
+/* Call button at top of mobile menu */
+.nav__mobile-call {
+  display: flex !important;
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Remove the margin-top that was pushing ul down (X button replaces it) */
+.nav__mobile-menu ul {
+  margin-top: 0;
 }
 
 /* ============================================

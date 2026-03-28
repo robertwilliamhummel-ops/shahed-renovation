@@ -33,6 +33,14 @@ class Navigation {
         this.mobileMenu.classList.toggle('nav__mobile-menu--open');
       });
 
+      // Close button handler
+      const mobileClose = document.getElementById('mobile-close');
+      if (mobileClose) {
+        mobileClose.addEventListener('click', () => {
+          this.mobileMenu.classList.remove('nav__mobile-menu--open');
+        });
+      }
+
       // Close menu when clicking outside
       document.addEventListener('click', (e) => {
         if (!this.mobileMenu.contains(e.target) && !this.hamburger.contains(e.target)) {
