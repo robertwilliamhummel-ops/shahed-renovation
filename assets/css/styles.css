@@ -256,13 +256,23 @@ strong {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-sm) var(--spacing-sm);
+  padding: 0.5rem var(--spacing-sm);
   gap: var(--spacing-lg);
 }
 
 .nav__logo img {
-  max-height: 70px;
+  max-height: 52px;
   width: auto;
+}
+
+@media (min-width: 768px) {
+  .nav__logo img {
+    max-height: 70px;
+  }
+
+  .nav__inner {
+    padding: var(--spacing-sm);
+  }
 }
 
 .nav__links {
