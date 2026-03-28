@@ -212,7 +212,13 @@ class ScrollAnimations {
     }, options);
 
     this.elements.forEach(element => {
-      observer.observe(element);
+      // If element is already visible in viewport on page load, show it immediately
+      const rect = element.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        element.classList.add('visible');
+      } else {
+        observer.observe(element);
+      }
     });
   }
 }

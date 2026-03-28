@@ -308,6 +308,8 @@ strong {
   border: none;
   padding: 8px;
   cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
 
 .nav__hamburger span {
@@ -334,10 +336,12 @@ strong {
   padding: var(--spacing-xl) var(--spacing-lg);
   transition: right 0.3s ease;
   z-index: 999;
+  pointer-events: none;
 }
 
 .nav__mobile-menu--open {
   right: 0;
+  pointer-events: auto;
 }
 
 .nav__mobile-menu ul {
