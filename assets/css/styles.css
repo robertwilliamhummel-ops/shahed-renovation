@@ -54,6 +54,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  /* Account for fixed navigation when scrolling to anchors */
+  scroll-padding-top: 90px;
 }
 
 body {
