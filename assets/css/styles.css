@@ -64,6 +64,7 @@ body {
   background: var(--bg-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 img {
@@ -1087,6 +1088,7 @@ strong {
 
 .about__image img {
   width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -1102,7 +1104,7 @@ strong {
 
 .about__stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--spacing-lg);
   margin-top: var(--spacing-2xl);
 }
@@ -1114,6 +1116,8 @@ strong {
   border-radius: var(--border-radius-lg);
   text-align: center;
   box-shadow: var(--shadow);
+  min-width: 0;
+  word-wrap: break-word;
 }
 
 .stat-box__number {
